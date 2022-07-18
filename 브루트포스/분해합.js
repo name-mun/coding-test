@@ -30,7 +30,7 @@ for (let i = 0; i < n; i++) {
 }
 
 if (conMin == 1000000) {
-  return 0;
+  console.log(0);
 } else {
   console.log(conMin);
 }
