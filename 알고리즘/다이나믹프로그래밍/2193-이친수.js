@@ -1,4 +1,5 @@
 const input = require("fs").readFileSync("example.txt").toString().trim();
+
 n = Number(input);
 
 let arr = [
@@ -8,9 +9,10 @@ let arr = [
 ];
 
 for (let i = 3; i <= n; i++) {
-  zero = arr[i - 1][0] + arr[i - 1][1];
-  one = arr[i - 1][0];
-  arr[i] = [zero, one];
+  arr[i] = [
+    BigInt(arr[i - 1][0]) + BigInt(arr[i - 1][1]),
+    BigInt(arr[i - 1][0]),
+  ];
 }
 
-console.log(arr[n][0] + arr[n][1]);
+console.log((BigInt(arr[n][0]) + BigInt(arr[n][1])).toString());
